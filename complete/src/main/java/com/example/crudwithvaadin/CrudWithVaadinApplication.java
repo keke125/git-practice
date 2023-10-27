@@ -19,7 +19,7 @@ public class CrudWithVaadinApplication {
 
 	@Bean
 	public CommandLineRunner loadData(CustomerRepository repository) {
-		if(repository.count()==0){
+		if(!(repository.count()==1)){
 			return (args) -> {
 				// save a couple of customers
 				repository.save(new Customer("Jack", "Bauer"));
